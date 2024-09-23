@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Vehiculo;
 use Illuminate\Http\Request;
 
 class VehiculoController extends Controller
@@ -14,7 +15,9 @@ class VehiculoController extends Controller
      */
     public function index()
     {
-        return view("vehiculos.index");
+        $vehiculos = Vehiculo::all();
+
+        return view("vehiculos.index", ["vehiculos"=> $vehiculos]);
     }
 
     /**
@@ -43,7 +46,9 @@ class VehiculoController extends Controller
             'fechaIngreso'=> 'required',
         ]);
 
-        return redirect('/vehiculos/index');
+        Vehiculo::create($data);
+
+        return redirect('/vehiculos/show');
     }
 
     /**

@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <form action="/vehiculos/store" method="POST">
-            <!-- idCliente -->
+            @csrf
             <div class="mb-3">
                 <label for="idCliente" class="form-label">Cliente</label>
                 <select id="idCliente" name="idCliente" class="form-select" required>

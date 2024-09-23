@@ -28,7 +28,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Datos de la tabla -->
+                            @foreach ($vehiculos as $item)
+                            <tr>
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->idCliente }}</td>
+                                <td>{{ $item->modelo }}</td>
+                                <td>{{ $item->marca }}</td>
+                                <td>{{ $item->placas }}</td>
+                                <td>{{ $item->fechaIngreso }}</td>
+                                <td>
+                                    <a class="btn btn-success btn-sm" href="/clientes/edit/{{ $item->codigo }}">Modificar</a>
+                                    <button class="btn btn-danger btn-sm" url="/clientes/destroy/{{ $item->codigo }}"
+                                        onclick="destroy(this)" token="{{ csrf_token() }}">Eliminar</button>
+                                </td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
