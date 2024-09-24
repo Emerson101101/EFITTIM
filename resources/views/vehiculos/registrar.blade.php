@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Inicio')
+@section('title', 'Registrar')
 
 @section('content')
     <div class="container">
@@ -10,7 +10,7 @@
                 <label for="idCliente" class="form-label">Cliente</label>
                 <select id="idCliente" name="idCliente" class="form-select" required>
                     <option value="" selected disabled>Seleccione un cliente</option>
-                    <option value="1">Cliente 1</option>
+                    <option value="123445">Cliente 1</option>
                     <option value="2">Cliente 2</option>
                 </select>
                 @error('idCliente')

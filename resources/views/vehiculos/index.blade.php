@@ -37,8 +37,8 @@
                                 <td>{{ $item->placas }}</td>
                                 <td>{{ $item->fechaIngreso }}</td>
                                 <td>
-                                    <a class="btn btn-success btn-sm" href="/clientes/edit/{{ $item->codigo }}">Modificar</a>
-                                    <button class="btn btn-danger btn-sm" url="/clientes/destroy/{{ $item->codigo }}"
+                                    <a class="btn btn-success btn-sm" href="/vehiculos/edit/{{ $item->id }}">Modificar</a>
+                                    <button class="btn btn-danger btn-sm" url="/vehiculos/destroy/{{ $item->id }}"
                                         onclick="destroy(this)" token="{{ csrf_token() }}">Eliminar</button>
                                 </td>
                             </tr>

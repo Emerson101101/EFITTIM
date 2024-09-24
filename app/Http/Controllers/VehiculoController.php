@@ -68,9 +68,9 @@ class VehiculoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Vehiculo $vehiculo)
     {
-        //
+        return view('vehiculos.actualizar', ['vehiculo'=> $vehiculo]);
     }
 
     /**
@@ -80,9 +80,23 @@ class VehiculoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Vehiculo $vehiculo)
     {
-        //
+        $data = request()->validate([
+            'modelo' => 'required',
+            'marca' => 'required',
+            'placas'=> 'required',
+        ]);
+
+        $vehiculo->modelo = $data['modelo'];
+        $vehiculo->marca = $data['marca'];
+        $vehiculo->placas = $data['placas'];
+
+        $vehiculo->updated_at = now();
+        
+        $vehiculo->save();
+
+        return redirect('/vehiculos/show');
     }
 
     /**
@@ -93,6 +107,8 @@ class VehiculoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Vehiculo::destroy($id);
+
+        return response()->json(array("res"=>true));
     }
 }
