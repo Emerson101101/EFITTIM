@@ -39,7 +39,8 @@
             <li><a class="dropdown-item" href="aceite/show">Cambio de aceite</a></li>
             <li><a class="dropdown-item" href="#">Cambio de llanta</a></li>
             <li><a class="dropdown-item" href="#"> Pastillas de freno</a></li>
-           
+            <li><a class="dropdown-item" href="areas/show"> Áreas</a></li>
+
           </ul>
         </li>
        

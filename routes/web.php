@@ -19,6 +19,18 @@ Route::put('/vehiculos/update/{vehiculo}', [VehiculoController::class, 'update']
 Route::delete('/vehiculos/destroy/{id}', [VehiculoController::class, 'destroy']);
 
 
+//Ruta para modificar un crear
+Route::get('/areas/create', [AreaController::class, 'create']);
+//Ruta para insertar area
+Route::post('/areas/store', [AreaController::class, 'store']);
+//Ruta para mostrar las vista de areas 
+Route::get('/areas/show', [AreaController::class, 'index']);
+//Ruta para eliminar area
+Route::delete('/areas/destroy/{id}', [AreaController::class, 'destroy']);
+
+
+
+
 Route::get('/', function () {
     return view('login');
 });
@@ -33,3 +45,4 @@ Route::get('aceite/show', function (){
 Route::get('aceite/create', function (){
     return view('aceite/create');
 });
+
